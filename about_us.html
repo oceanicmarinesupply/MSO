@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCEAN MARINE SUPPLY</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,14 +20,23 @@
             </a>
     
             <ul class="nav-menu">
-                <button id="menu-close-button" class="fas fa-times"></button>
-        
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">About Us</a>
-                </li>
+            <button id="menu-close-button" class="fas fa-times"></button>
+    
+            <li class="nav-item">
+                <a href="index.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <!-- <a href="#product" class="nav-link">Products</a> -->
+            </li>
+            <!-- <li class="nav-item">
+                <a href="#testimonials" class="nav-link">Team</a>
+            </li> -->
+            <li class="nav-item">
+                <a href="#about" class="nav-link">About Us</a>
+            </li>
+            <li class="nav-item">
+                <!-- <a href="index.html" class="nav-link">Contact Us</a> -->
+            </li>
             </ul>
     
             <button id="menu-open-button" class="fas fa-bars"></button>
@@ -31,9 +45,9 @@
 
     <main>
         <!-- Hero section -->
-        <section class="hero-section2" style="position: relative; min-height: 90vh; overflow: hidden;">
-            <img src="images/container-ship-w1920x1280.jpg" alt="Container Ship" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; object-fit: cover; opacity: 0.8; filter: brightness(0.7);">
-            <h1 style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 2.5rem; font-weight: bold; text-align: center; padding: 0 20px;">ABOUT US</h1>
+        <section class="hero-section2">
+            <img src="images/container-ship-w1920x1280.jpg" alt="Container Ship" class="hero-background">
+            <h1 class="hero-title">ABOUT US</h1>
         </section>
 
         <!-- About section -->
@@ -41,13 +55,15 @@
             <div class="section-content">
                 <div class="about-image-wrapper">
                     <img src="images/general-ship-04.jpg" alt="About" class="about-image" />
-                    </div>
-                    <div class="about-details">
+                </div>
+                <div class="about-details">
                     <h2 class="section-title">About Us</h2>
                     <p class="text">At Marine Supply Oceanic, we specialize in providing comprehensive maritime supply solutions tailored to meet the needs of vessels and offshore operations worldwide. With a strong focus on quality, efficiency, and reliability, we offer a wide range of products and services, including provisions, frozen goods, bonded stores, safety equipment, and technical supplies. Our team is dedicated to ensuring that each delivery is timely and meets the highest standards, utilizing ISSA and IMPA codes to streamline the process.</p>
                 </div>
             </div>
         </section>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
