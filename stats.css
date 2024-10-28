@@ -2,6 +2,29 @@
   text-align: center;
   padding: 50px 0;
   background-color: #f0f8ff; /* Light blue */
+  position: relative;
+  overflow: hidden;
+}
+
+.statistics-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/World_map_(blue_dots).svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  /* filter: brightness(0.7); */
+  z-index: 1;
+  opacity: 50;
+}
+
+.statistics-section > * {
+  position: relative;
+  z-index: 2;
 }
 
 .statistics-section h2 {
