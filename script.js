@@ -47,3 +47,28 @@ let swiper = new Swiper(".slider-wrapper", {
     },
   },
 });
+
+// Scroll button functionality
+const scrollBtn = document.querySelector('.scroll_btn');
+const footer = document.querySelector('footer');
+
+window.addEventListener('scroll', () => {
+    // Get the footer's position relative to the viewport
+    const footerRect = footer.getBoundingClientRect();
+    const footerVisible = footerRect.top <= window.innerHeight;
+    
+    // Show button when footer is visible and we're scrolling up
+    if (footerVisible && window.scrollY > 300) {
+        scrollBtn.classList.add('show');
+    } else {
+        scrollBtn.classList.remove('show');
+    }
+});
+
+// Smooth scroll to top when button is clicked
+scrollBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
