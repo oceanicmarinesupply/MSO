@@ -14,7 +14,8 @@
   --white-color: #fff;
   --dark-color: #252525;
   --primary-color: #012D5C;
-  --secondary-color: #f68b00;
+  --secondary-color: #2072f5;
+  --secondary2-color: #f68b00;
   --light-pink-color: #faf4f5;
   --medium-gray-color: #ccc;
   --footer-bottom-bg-color: #343a40;
@@ -119,12 +120,18 @@ header .navbar {
   font-weight: var(--font-weight-semibold);
 }
 
+.navbar .nav-logo .logo-text span{
+  color: var(--secondary-color);
+}
+
 .navbar .nav-menu {
+  column-gap: 20px;
   display: flex;
 }
 
 .navbar .nav-menu .nav-link {
-  padding: 10px 18px;
+  /* background-color: red; */
+  padding: 10px 0px;
   color: var(--white-color);
   font-size: var(--font-size-m);
   transition: 0.3s ease;
@@ -132,8 +139,8 @@ header .navbar {
 
 .navbar .nav-menu .nav-link:hover {
   color: var(--secondary-color);
-  border-bottom: 2px orange solid;
-  /* background: var(--secondary-color); */
+  border-bottom: 2px var(--secondary-color) solid;
+  border-width: 5px;
 }
 
 .navbar :where(#menu-open-button, #menu-close-button) {
@@ -271,14 +278,15 @@ header .navbar {
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
-  background: #2072f5;
+  background: var(--primary-color);
   margin: 0 0 0 30px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .about-details .button:hover {
-  background-color: #f0f1f8;
+  background-color: #f0f8ff;
+  border: 1px black solid;
   color: black;
 }
 
@@ -744,8 +752,6 @@ footer .scroll_btn.show {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* opacity: 0.2; */
-    /* filter: brightness(0.7); */
 }
 
 .hero-title {
