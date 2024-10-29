@@ -62,8 +62,50 @@
                 </div>
             </div>
         </section>
+
+           <!-- Footer section -->
+      <footer class="footer">
+        <div class="container2">
+          <div class="footer-bottom">
+             &copy; 2024 MARINE SUPPLY OCEANIC | All right Reserved
+          </div>  
+        </div>   
+        
+        <div class="scroll_btn">
+          <img src="images/icons8-arrow-up-38.png" alt="upBtn">
+        </div>
+      </footer>
     </main>
 
-    <script src="script.js"></script>
+      <!-- Linking Swiper script -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <!-- Linking custom script -->
+      <script src="script.js"></script>
+      
+      <script>
+        function countUp(elementId, start, end, duration) {
+          let element = document.getElementById(elementId);
+          let range = end - start;
+          let increment = end > start ? 1 : -1;
+          let stepTime = Math.abs(Math.floor(duration / range));
+          
+          let current = start;
+          let timer = setInterval(function() {
+            current += increment;
+            element.innerText = current;
+            if (current == end) {
+              clearInterval(timer);
+            }
+          }, stepTime);
+        }
+      
+        // Start the counters when the page loads
+        window.onload = function() {
+          countUp("packages", 0, 250, 1000); // 2 seconds for Packages Delivered
+          countUp("clients", 0, 200, 1000);  // 2 seconds for Satisfied Clients
+          countUp("ports", 0, 2, 1000);     // 2 seconds for Ports Reach
+          countUp("goods", 0, 150, 1000);    // 2 seconds for Tons of Goods
+        };
+      </script> 
 </body>
 </html>

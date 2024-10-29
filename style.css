@@ -253,6 +253,8 @@ header .navbar {
   width: 600px;
   object-fit: cover;
   border-radius: var(--border-radius-m);
+  box-shadow: 5px 5px 20px .8px var(--primary-color);
+
 }
 
 .about-section .about-details {
@@ -278,7 +280,7 @@ header .navbar {
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
-  background: var(--primary-color);
+  background: var(--secondary-color);
   margin: 0 0 0 30px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -529,7 +531,7 @@ footer .scroll_btn.show {
 }
 
 .footer .footer-bottom {
-  background: var(--footer-bottom-bg-color);
+  background: var(--primary-color);
   color: #fff;
   text-align: center;
   padding: 20px 0;
