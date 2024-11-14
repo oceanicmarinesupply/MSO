@@ -1,0 +1,277 @@
+/* Media Queries */
+@media screen and (max-width: 1035px) {
+  section .section-title2 {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .menu-section .menu-list {
+    gap: 60px;
+  }
+
+  .menu-section .menu-list .menu-item {
+    width: calc(100% / 3 - 60px);
+  }
+
+  .section-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .about-details {
+    position: static; /* Remove sticky on smaller screens */
+    max-width: 100%;
+  }
+
+  .about-details2 {
+    max-width: 100%;
+  }
+
+  .about-image-wrapper {
+    max-width: 100%;
+  }
+
+  .section-content2 {
+    flex-direction: column;
+  }
+
+  .about-section2 .section-content2 {
+    padding: 0 6rem;
+  }
+
+  section .section-title2 {
+    padding: 0 8rem 0 0;
+    /* color: blue; */
+  }
+}
+/* Responsive media query code for max width 900px */
+@media screen and (max-width: 900px) {
+  :root {
+    --font-size-m: 1rem;
+    --font-size-l: 1.3rem;
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 1.8rem;
+  }
+
+  .sticky-details {
+    /* position: stick y; */
+    top: 100px;
+    align-self: flex-start;
+    max-height: calc(170vh - 40px);
+    overflow-y: auto;
+  }
+
+  /* body {
+        background-color: rgba(255, 0, 0, 0.484);
+    } */
+
+  body.show-mobile-menu {
+    overflow: hidden;
+  }
+
+  body.show-mobile-menu header::before {
+    content: "";
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    /* background: rgba(0, 0, 0, 0.2); */
+  }
+
+  .navbar :is(#menu-open-button, #menu-close-button) {
+    font-size: var(--font-size-l);
+    display: block;
+  }
+
+  .navbar :is(#menu-open-button, #menu-close-button):hover {
+    color: var(--secondary-color) !important;
+  }
+
+  .navbar #menu-open-button {
+    color: #fff;
+  }
+
+  .navbar .nav-menu #menu-close-button {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+  }
+
+  .navbar .nav-menu {
+    display: block;
+    color: black;
+    background: #fff;
+    position: fixed;
+    top: 30px;
+    left: -300px;
+    height: 90%;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 100px;
+    transition: left 0.2s ease;
+    border-radius: 20px;
+  }
+
+  body.show-mobile-menu .nav-menu {
+    left: 45px;
+  }
+
+  .navbar .nav-menu .nav-link {
+    display: block;
+    margin-top: 17px;
+    padding: 10px 22px;
+    color: var(--dark-color);
+    font-size: var(--font-size-l);
+  }
+
+  .section-content .hero-image-wrapper {
+    margin-bottom: -50px;
+  }
+
+  .hero-section .section-content {
+    text-align: center;
+    gap: 50px;
+    padding: 30px 20px 20px;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  .hero-section .hero-details :is(.subtitle, .description),
+  .about-section .about-details,
+  .contact-section .contact-form {
+    max-width: 100%;
+  }
+
+  .hero-section .hero-details .buttons {
+    justify-content: center;
+  }
+
+  .hero-section .hero-image-wrapper {
+    max-width: 270px;
+    margin-right: 0;
+  }
+
+  .about-section .section-content {
+    gap: 70px;
+    flex-direction: column-reverse;
+  }
+
+  .about-section .about-image-wrapper .about-image {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1;
+    max-width: 250px;
+  }
+
+  .menu-section .menu-list {
+    gap: 30px;
+  }
+
+  .menu-section .menu-list .menu-item {
+    width: calc(100% / 2 - 30px);
+  }
+
+  .menu-section .menu-list .menu-item .menu-image {
+    max-width: 200px;
+  }
+
+  .gallery-section .gallery-list {
+    gap: 30px;
+  }
+
+  .gallery-section .gallery-list .gallery-item {
+    width: calc(100% / 2 - 30px);
+  }
+
+  .contact-section .section-content {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title2 {
+    font-size: 1.5rem;
+  }
+
+  .text,
+  .text2 {
+    font-size: 0.9rem;
+  }
+
+  .hero-section {
+    background-attachment: scroll;
+  }
+}
+/* Responsive media query code for max width 640px */
+@media screen and (max-width: 640px) {
+  .menu-section .menu-list .menu-item,
+  .gallery-section .gallery-list .gallery-item {
+    width: 100%;
+  }
+
+  .menu-section .menu-list {
+    gap: 60px;
+  }
+
+  .testimonials-section .slider-wrapper {
+    margin: 0 0 30px;
+  }
+
+  .testimonials-section .swiper-slide-button {
+    display: none;
+  }
+
+  .footer-section .section-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+/* Responsive media query code for max width 620px */
+@media screen and (max-width: 620px) {
+  .about-section2 .section-content2 {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section-content {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media screen and (max-width: 301px) {
+  section .section-title2 {
+    font-size: .7em;
+  }
+}
+/* Add a dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Adjust colors as needed for dark mode, excluding about section and hero text */
+    /* --dark-color: #f5f5f5; */
+    --medium-gray-color: #888;
+    --footer-bottom-bg-color: #2a2a2a;
+  }
+
+  /* You may need to add specific overrides for elements that should retain their original colors */
+  .about-section {
+    background: #f0f8ff;
+  }
+
+  .hero-section .hero-details {
+    color: var(--white-color);
+  }
+
+  /* Adjust other styles as needed for dark mode */
+}

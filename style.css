@@ -66,17 +66,27 @@ img {
   width: 100%;
 }
 
-:where(section, footer) .section-content {
+:where(section, footer) .section-content, .section-title2 {
   margin: 0 auto;
   padding: 0 20px;
   max-width: var(--site-max-width);
 }
 
-section .section-title {
+section .section-title, .section-title2 {
   text-align: center;
   padding: 50px 0 20px;
   text-transform: uppercase;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
+}
+
+section .section-title2, .text2 {
+  text-align: left;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+section .text {
+  line-height: 1.9em;
 }
 
 .section-Stitle {
@@ -91,10 +101,24 @@ section .section-title::after {
   width: 80px;
   height: 5px;
   display: block;
-  margin: 10px auto 0;
+  margin: 10px auto 10px;
   background: var(--secondary-color);
   border-radius: var(--border-radius-s);
 }
+
+section .section-title2::after {
+  content: "";
+  /* width: 80px; */
+  width: 30vw;
+  height: 5px;
+  display: block;
+  margin: 10px 0 10px;
+  background: var(--secondary-color);
+  border-radius: var(--border-radius-s);
+}
+
+/* section .section-title2::after {
+} */
 
 /* Navbar styling */
 header {
@@ -116,7 +140,7 @@ header .navbar {
 
 .navbar .nav-logo .logo-text {
   color: var(--white-color);
-  font-size: var(--font-size- l);
+  font-size: var(--font-size-l);
   font-weight: var(--font-weight-semibold);
 }
 
@@ -158,13 +182,6 @@ header .navbar {
   /* max-width: 100vw; */
   overflow-x: hidden;
   background-color: #012D5C;
-}
-
-
-@media screen and (max-width: 768px) {
-  .hero-section {
-    background-attachment: scroll;
-  }
 }
 
 .hero-section .section-content {
@@ -232,11 +249,11 @@ header .navbar {
   /* max-width: 500px; */
   /* margin-right: 190px; */
   margin-bottom: 50px;
-  /* overflow-inline: hidden; */
+  overflow-inline: hidden;
 }
 
 /* About section styling */
-.about-section {
+.about-section, .about-section2 {
   padding: 120px 0;
   background: var(--light-pink-color);
 }
@@ -245,6 +262,14 @@ header .navbar {
   display: flex;
   gap: 50px;
   align-items: center;
+  justify-content: space-between;
+}
+
+.about-section2 .section-content2 {
+  display: flex;
+  gap: 50px;
+  padding: 25px;
+  align-items: top;
   justify-content: space-between;
 }
 
@@ -257,18 +282,25 @@ header .navbar {
 
 }
 
-.about-section .about-details {
+.about-section .about-details, .about-details2 {
   max-width: 50%;
 }
 
-.about-section .about-details .section-title {
+.about-section .about-details .section-title, .section-title2 {
   padding: 0;
 }
 
 .about-section .about-details .text {
   line-height: 30px;
-  margin: 45px 30px;
+  margin: 45px 0px;
   text-align: center;
+  font-size: var(--font-size-m);
+}
+/* ABOUT US */
+.about-section .about-details2 .text2 {
+  line-height: 30px;
+  margin: 10px 0px 0px 0px;
+  text-align: left;
   font-size: var(--font-size-m);
 }
 
@@ -395,6 +427,7 @@ header .navbar {
 
 .gallery-section .gallery-list {
   display: flex;
+  justify-content: center;
   gap: 32px;
   flex-wrap: wrap;
 }
@@ -502,6 +535,72 @@ header .navbar {
   margin: 0 auto;
 }
 
+/* Improve accessibility with focus styles */
+:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.hero-section2 {
+    position: relative;
+    min-height: 90vh;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    width: 250px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-content {
+    position: relative;
+}
+
+.sticky-details {
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
+    max-height: calc(170vh - 40px); 
+    overflow-y: auto;
+  }
+
+  .about-details2 {
+      flex: 1;
+      top: 100px;
+      height: fit-content;
+      max-width: 400px;
+  }
+
+.section-content {
+    display: flex;
+    gap: 2rem;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    padding: 2rem;
+    /* background-color: red; */
+}
+
+.about-details2 {
+    flex: 1;
+    max-width: 600px;
+}
+
 footer .scroll_btn {
   background-color: var(--primary-color);
   cursor: pointer;
@@ -536,234 +635,4 @@ footer .scroll_btn.show {
   text-align: center;
   padding: 20px 0;
   margin-top: 50px;
-}
-
-/* Responsive media query code for max width 1024px */
-@media screen and (max-width: 1024px) {
-  .menu-section .menu-list {
-    gap: 60px;
-  }
-
-  .menu-section .menu-list .menu-item {
-    width: calc(100% / 3 - 60px);
-  }
-
-}
-
-/* Responsive media query code for max width 900px */
-@media screen and (max-width: 900px) {
-  :root {
-    --font-size-m: 1rem;
-    --font-size-l: 1.3rem;
-    --font-size-xl: 1.5rem;
-    --font-size-xxl: 1.8rem;
-  }
-
-  body.show-mobile-menu {
-    overflow: hidden;
-  }
-
-  body.show-mobile-menu header::before {
-    content: "";
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(5px);
-    /* background: rgba(0, 0, 0, 0.2); */
-  }
-
-  .navbar :is(#menu-open-button, #menu-close-button) {
-    font-size: var(--font-size-l);
-    display: block;
-  }
-
-  .navbar :is(#menu-open-button, #menu-close-button):hover {
-    color: var(--secondary-color) !important;
-  }
-
-  .navbar #menu-open-button {
-    color: #fff;
-  }
-
-  .navbar .nav-menu #menu-close-button {
-    position: absolute;
-    right: 30px;
-    top: 30px;
-  }
-
-  .navbar .nav-menu {
-    display: block;
-    color: black;
-    background: #fff;
-    position: fixed;
-    top: 30px;
-    left: -300px;
-    height: 90%;
-    width: 300px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 100px;
-    transition: left 0.2s ease;
-    border-radius: 20px;
-  }
-
-  body.show-mobile-menu .nav-menu {
-    left: 45px;
-  }
-
-  .navbar .nav-menu .nav-link {
-    display: block;
-    margin-top: 17px;
-    padding: 10px 22px;
-    color: var(--dark-color);
-    font-size: var(--font-size-l);
-  }
-
-  .section-content .hero-image-wrapper {
-    margin-bottom: -50px;
-  }
-
-  .hero-section .section-content {
-    text-align: center;
-    gap: 50px;
-    padding: 30px 20px 20px;
-    justify-content: center;
-    flex-direction: column-reverse;
-  }
-
-  .hero-section .hero-details :is(.subtitle, .description),
-  .about-section .about-details,
-  .contact-section .contact-form {
-    max-width: 100%;
-  }
-
-  .hero-section .hero-details .buttons {
-    justify-content: center;
-  }
-
-  .hero-section .hero-image-wrapper {
-    max-width: 270px;
-    margin-right: 0;
-  }
-
-  .about-section .section-content {
-    gap: 70px;
-    flex-direction: column-reverse;
-  }
-
-  .about-section .about-image-wrapper .about-image {
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1;
-    max-width: 250px;
-  }
-
-  .menu-section .menu-list {
-    gap: 30px;
-  }
-
-  .menu-section .menu-list .menu-item {
-    width: calc(100% / 2 - 30px);
-  }
-
-  .menu-section .menu-list .menu-item .menu-image {
-    max-width: 200px;
-  }
-
-  .gallery-section .gallery-list {
-    gap: 30px;
-  }
-
-  .gallery-section .gallery-list .gallery-item {
-    width: calc(100% / 2 - 30px);
-  }
-
-  .contact-section .section-content {
-    align-items: center;
-    flex-direction: column-reverse;
-  }
-}
-
-/* Responsive media query code for max width 640px */
-@media screen and (max-width: 640px) {
-
-  .menu-section .menu-list .menu-item,
-  .gallery-section .gallery-list .gallery-item {
-    width: 100%;
-  }
-
-  .menu-section .menu-list {
-    gap: 60px;
-  }
-
-  .testimonials-section .slider-wrapper {
-    margin: 0 0 30px;
-  }
-
-  .testimonials-section .swiper-slide-button {
-    display: none;
-  }
-
-  .footer-section .section-content {
-    flex-direction: column;
-    gap: 20px;
-  }
-}
-
-/* Improve accessibility with focus styles */
-:focus {
-  outline: 2px solid var(--primary-color);
-  outline-offset: 2px;
-}
-
-/* Add a dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Adjust colors as needed for dark mode, excluding about section and hero text */
-    /* --dark-color: #f5f5f5; */
-    --medium-gray-color: #888;
-    --footer-bottom-bg-color: #2a2a2a;
-  }
-  
-  /* You may need to add specific overrides for elements that should retain their original colors */
-  .about-section {
-    background: #f0f8ff;
-  }
-
-  .hero-section .hero-details {
-    color: var(--white-color);
-  }
-
-  /* Adjust other styles as needed for dark mode */
-}
-
-.hero-section2 {
-    position: relative;
-    min-height: 90vh;
-    overflow: hidden;
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    font-size: 3rem;
-    width: 250px;
-    font-weight: bold;
-    text-align: center;
 }
