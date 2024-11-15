@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="contact.css"> 
     <link rel="stylesheet" href="stats.css"> 
     <link rel="stylesheet" href="mobile.css"> 
+    <link rel="stylesheet" href="animations.css">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -89,7 +90,7 @@
 
       <!-- About section -->
       <section class="about-section" id="about">
-        <div class="section-content">
+        <div class="section-content fade-in">
           <div class="about-image-wrapper">
             <img src="images/general-ship-04.jpg" alt="About" class="about-image" />
           </div>
@@ -102,12 +103,12 @@
       </section>
 
       <!-- Product section -->
-      <section class="gallery-section" id="product">
+      <section class="gallery-section fade-in" id="product">
         <h2 class="section-title">Our Product</h2>
         <p class="section-Stitle">these are the variety of product we offer</p>
         <div class="section-content">
           <div class="gallery-list">
-            <div class="gallery-item">
+            <div class="gallery-item fade-in">
                 <div class="Timage">
                   <img src="images/2-2-2-3foodgroups_fruits_detailfeature.jpg" alt="Gallery Image" class="gallery-image" />
                 </div>
@@ -117,7 +118,7 @@
                   <p>Our fruits and vegetables are sourced directly from the farm, offering an extensive variety that is carefully checked daily to ensure freshness and exceptional taste.</p>  
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item fade-in">
                 <div class="Timage">
                   <img src="images/frozen-meat.jpg" alt="Gallery Image" class="gallery-image" />
                 </div>
@@ -127,7 +128,7 @@
                   <p>Beef, pork, chicken, and a variety of fish and seafood—our selection of meat, poultry, and seafood always represents the finest choices available.</p>
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item fade-in">
                 <div class="Timage">
                   <img src="images/supply-chain-warehouse-black-man-tablet-inspection-inventory-online-stock-manufacturing-distribution-person-digital-321054915.webp" alt="Gallery Image" class="gallery-image" />
                 </div>
@@ -137,7 +138,7 @@
                    <p>We utilize ISSA and IMPA codes to accurately identify and consolidate all necessary items, ensuring the successful delivery of equipment and materials requested on board.</p>
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item fade-in">
                 <div class="Timage">
                   <img src="images/COLOURBOX47471689.webp" alt="Gallery Image" class="gallery-image" />
                 </div>
@@ -147,7 +148,7 @@
                   <p>Grains, cereals, pasta, canned goods, sweets, and beverages—each ingredient is carefully selected to guarantee the success of every meal.</p>  
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item fade-in">
                 <div class="Timage">
                   <img src="images/1-DutyFree-shutterstock_562900015.jpg" alt="Gallery Image" class="gallery-image" />
                 </div>
@@ -157,7 +158,7 @@
                   <p>We offer a diverse selection of premium products, including cigarettes, alcoholic beverages, soft drinks, chocolates, and various other foods.</p>  
                 </div>
             </div>
-            <div class="gallery-item">
+            <div class="gallery-item fade-in">
                 <div class="Timage">
                   <img src="images/adobestock_262333851_web.jpg" alt="Gallery Image" class="gallery-image" />
                 </div>
@@ -171,7 +172,7 @@
       </section>
 
       <!-- Contact section -->
-      <section class="contact-section" id="contact">
+      <section class="contact-section fade-in" id="contact">
         <h2 class="section-title">Contact Us</h2>
 
         <div class="container">
@@ -228,7 +229,7 @@
         </div>
       </section>
 
-      <section class="statistics-section">
+      <section class="statistics-section fade-in">
         <h2>Some statistics that we want to show our viewers</h2>
         <!-- <p></p> -->
         <div class="stats-container">
@@ -291,13 +292,27 @@
         }, stepTime);
       }
     
-      // Start the counters when the page loads
-      window.onload = function() {
-        countUp("packages", 0, 250, 1000); // 2 seconds for Packages Delivered
-        countUp("clients", 0, 200, 1000);  // 2 seconds for Satisfied Clients
-        countUp("ports", 0, 2, 1000);     // 2 seconds for Ports Reach
-        countUp("goods", 0, 150, 1000);    // 2 seconds for Tons of Goods
-      };
+      // Create an Intersection Observer
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // Check if the statistics section is in view
+          if (entry.isIntersecting) {
+            // Start the counters
+            countUp("packages", 0, 250, 1000);
+            countUp("clients", 0, 200, 1000);
+            countUp("ports", 0, 2, 1000);
+            countUp("goods", 0, 150, 1000);
+            // Disconnect the observer after triggering the animation
+            observer.disconnect();
+          }
+        });
+      }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+      // Observe the statistics section
+      document.addEventListener('DOMContentLoaded', () => {
+        const statsSection = document.querySelector('.statistics-section');
+        observer.observe(statsSection);
+      });
     </script> 
   </body>
 </html>
