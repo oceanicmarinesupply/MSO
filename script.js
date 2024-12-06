@@ -96,3 +96,39 @@ faders.forEach(fader => {
 sliders.forEach(slider => {
   appearOnScroll.observe(slider);
 });
+
+function countUp(elementId, start, end, duration) {
+  let element = document.getElementById(elementId);
+  let range = end - start;
+  let increment = end > start ? 1 : -1;
+  let stepTime = Math.abs(Math.floor(duration / range));
+  
+  let current = start;
+  let timer = setInterval(function() {
+    current += increment;
+    element.innerText = current;
+    if (current == end) {
+      clearInterval(timer);
+    }
+  }, stepTime);
+}
+// Create an Intersection Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    // Check if the statistics section is in view
+    if (entry.isIntersecting) {
+      // Start the counters
+      countUp("packages", 0, 250, 1000);
+      countUp("clients", 0, 200, 1000);
+      countUp("ports", 0, 2, 1000);
+      countUp("goods", 0, 150, 1000);
+      // Disconnect the observer after triggering the animation
+      observer.disconnect();
+    }
+  });
+}, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+// Observe the statistics section
+document.addEventListener('DOMContentLoaded', () => {
+  const statsSection = document.querySelector('.statistics-section');
+  observer.observe(statsSection);
+});

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="contact.css"> 
     <link rel="stylesheet" href="stats.css"> 
     <link rel="stylesheet" href="mobile.css"> 
-    <link rel="stylesheet" href="animations.css">
+    <!-- <link rel="stylesheet" href="animations.css"> -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -207,18 +207,18 @@
             <div class="right-side">
               <div class="topic-text">Feel free to send us a message</div>
               <p>If you encounter any issues, please don't hesitate to contact us immediately. We are always happy to assist you.</p>
-              <form action="#">
+              <form action="https://formspree.io/f/xeoqdbkg" method="post">
                 <div class="input-box">
-                  <input type="text" placeholder="Enter your name" />
+                  <input type="text" name="name" placeholder="Enter your name" required />
                 </div>
                 <div class="input-box">
-                  <input type="text" placeholder="Enter your country" />
+                  <input type="text" name="country" placeholder="Enter your country" required />
                 </div>
                 <div class="input-box">
-                  <input type="text" placeholder="Enter your email" />
+                  <input type="email" name="email" placeholder="Enter your email" required />
                 </div>
                 <div class="input-box message-box">
-                  <textarea placeholder="Enter your message"></textarea>
+                  <textarea name="message" placeholder="Enter your message" required></textarea>
                 </div>
                 <div class="button">
                   <input type="submit" value="Send Now" />
@@ -275,44 +275,7 @@
     <!-- Linking custom script -->
     <script src="script.js"></script>
     
-    <script>
-      function countUp(elementId, start, end, duration) {
-        let element = document.getElementById(elementId);
-        let range = end - start;
-        let increment = end > start ? 1 : -1;
-        let stepTime = Math.abs(Math.floor(duration / range));
-        
-        let current = start;
-        let timer = setInterval(function() {
-          current += increment;
-          element.innerText = current;
-          if (current == end) {
-            clearInterval(timer);
-          }
-        }, stepTime);
-      }
-    
-      // Create an Intersection Observer
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          // Check if the statistics section is in view
-          if (entry.isIntersecting) {
-            // Start the counters
-            countUp("packages", 0, 250, 1000);
-            countUp("clients", 0, 200, 1000);
-            countUp("ports", 0, 2, 1000);
-            countUp("goods", 0, 150, 1000);
-            // Disconnect the observer after triggering the animation
-            observer.disconnect();
-          }
-        });
-      }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
-
-      // Observe the statistics section
-      document.addEventListener('DOMContentLoaded', () => {
-        const statsSection = document.querySelector('.statistics-section');
-        observer.observe(statsSection);
-      });
-    </script> 
+    <!-- <script>
+    </script>  -->
   </body>
 </html>
