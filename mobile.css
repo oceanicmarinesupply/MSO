@@ -100,10 +100,10 @@
   .navbar :is(#menu-open-button, #menu-close-button):hover {
     color: var(--secondary-color) !important;
   }
-
+/* 
   .navbar #menu-open-button {
     color: #fff;
-  }
+  } */
 
   .navbar .nav-menu #menu-close-button {
     position: absolute;
