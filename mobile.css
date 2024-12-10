@@ -95,6 +95,7 @@
   .navbar :is(#menu-open-button, #menu-close-button) {
     font-size: var(--font-size-l);
     display: block;
+    margin-right: 10px;
   }
 
   .navbar :is(#menu-open-button, #menu-close-button):hover {

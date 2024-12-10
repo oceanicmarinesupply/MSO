@@ -193,7 +193,7 @@ header .navbar {
 
 .nav-logo img {
   max-height: 90px;
-  margin-left: 30px;
+  margin-left: 20px;
   width: auto;
   object-fit: contain;
 }
@@ -334,7 +334,7 @@ header .navbar {
   font-size: var(--font-size-m);
 }
 
-.about-details .button {
+.about-details .button, .btn .button {
   color: #fff;
   font-size: 19px;
   outline: none;
@@ -348,7 +348,7 @@ header .navbar {
   transition: all 0.3s ease;
 }
 
-.about-details .button:hover {
+.about-details .button:hover, .btn .button:hover {
   background-color: #f0f8ff;
   border: 1px black solid;
   color: black;
