@@ -224,6 +224,15 @@
     background-attachment: scroll;
   }
 }
+
+@media screen and ( max-width: 670px){
+  .Ccontainer {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
 /* Responsive media query code for max width 640px */
 @media screen and (max-width: 640px) {
   .menu-section .menu-list .menu-item,
@@ -262,17 +271,7 @@
   .about-section .section-content {
     padding: 0 20px;
   }
-  /* section .section-title2 {
-    font-size: .7em;
-  } */
 }
-
-/* @media screen and (max-width: 480px) {
-  .section-content {
-    padding: 1rem 0.5rem;
-  }
-} */
-
 
 @media screen and (max-width: 301px) {
   section .section-title2 {

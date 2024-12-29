@@ -334,11 +334,11 @@ header .navbar {
   font-size: var(--font-size-m);
 }
 
-.about-details .button, .btn .button {
+.about-details .button, .btn .button, .conta2 .button {
   color: #fff;
   font-size: 19px;
-  outline: none;
-  width: 200px;
+  /* outline: none; */
+  width: 100%;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -346,6 +346,10 @@ header .navbar {
   margin: 0 0 0 30px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.conta2 .button {
+  margin: 0 0 0 0;
 }
 
 .about-details .button:hover, .btn .button:hover {

@@ -8,7 +8,7 @@
 }
 
 .contact-section {
-  /* min-height: 100vh; */
+  min-height: 100vh;
   width: 100%;
   background: var(--primary-color);
   display: flex;
@@ -32,32 +32,18 @@
 }
 
 .Ccontainer {
+  min-height: 40vh;
   max-width: 1000px;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  width: 80%;
   background: #fff;
   border-radius: 6px;
   padding: 20px 60px 30px 40px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.conta2 button a {
-  color: black;
-}
-
-.conta2 button {
-  display: flex;
-  align-items: center;
-  border: 3px solid var(--primary-color);
-  padding: 20px;
-  border-radius: 3px;
-}
-
-.conta2 button:hover {
-  border: 3px solid var(--secondary-color);
-  padding: 20px;
-} 
 
 .container .content {
   display: flex;
